@@ -34,8 +34,12 @@ class Datas extends Component{
   	return(
   	  <div>
   	    <h1>{this.state.channel}</h1>
-  	   	<ul>
-  	   	  {this.state.data.map(function(item,index){return <div key={index}>{item.title} </div>})}
+  	   	<ul className="main-ul">
+  	   	  {this.state.data.map(function(item,index){
+  	   	  	return <li className="main-li" key={index}>{item.title}
+  	   	  				<p dangerouslySetInnerHTML={{__html:item.content}}></p> 
+  	   	  			</li>
+  	   	  })}
   	   	</ul>
   	  </div>
   	)
